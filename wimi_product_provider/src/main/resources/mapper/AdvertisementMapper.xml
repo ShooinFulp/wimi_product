@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fred.wimi.wimiproduct.mapper.AdvertisementMapper">
+  <resultMap id="BaseResultMap" type="com.fred.wimi.wimiproduct.api.model.Advertisement">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="created_by" jdbcType="CHAR" property="createdBy" />
+    <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="updated_by" jdbcType="CHAR" property="updatedBy" />
+    <result column="updation_date" jdbcType="TIMESTAMP" property="updationDate" />
+    <result column="gc_flag" jdbcType="BIT" property="gcFlag" />
+    <result column="enabled_flag" jdbcType="BIT" property="enabledFlag" />
+    <result column="advertisement_name" jdbcType="VARCHAR" property="advertisementName" />
+    <result column="advertisement_position" jdbcType="VARCHAR" property="advertisementPosition" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="advertisement_url" jdbcType="LONGVARCHAR" property="advertisementUrl" />
+    <result column="advertisement_photo_url" jdbcType="LONGVARCHAR" property="advertisementPhotoUrl" />
+  </resultMap>
+</mapper>

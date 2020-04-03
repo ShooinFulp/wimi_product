@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fred.wimi.wimiproduct.mapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.fred.wimi.wimiproduct.api.model.Product">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="created_by" jdbcType="CHAR" property="createdBy" />
+    <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="updated_by" jdbcType="CHAR" property="updatedBy" />
+    <result column="updation_date" jdbcType="TIMESTAMP" property="updationDate" />
+    <result column="gc_flag" jdbcType="BIT" property="gcFlag" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="retail_price" jdbcType="DECIMAL" property="retailPrice" />
+  </resultMap>
+</mapper>
