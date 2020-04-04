@@ -25,8 +25,8 @@ public class BizResult<T> extends ResponseData<T> implements Serializable {
         return new BizResult<T>(0, "操作成功", data);
     }
 
-    public static <T> BizResult<T> failure(String message, int code) {
-        return new BizResult<T>(code, message);
+    public static BizResult failure(String message, int code) {
+        return new BizResult(code, message);
     }
 
     public static BizResult failure(AppCode appCode) {

@@ -1,24 +1,25 @@
-package com.fred.wimi.wimiproduct.api.model;
+package com.fred.wimi.wimiproduct.api.request;
 
 import lombok.Data;
 
-import java.util.Date;
-import javax.persistence.*;
+import javax.persistence.Column;
 
+/**
+ * 〈功能概述〉
+ *
+ * @author: fuliping
+ * @date: 2020/4/5 1:44 上午
+ */
 @Data
-@Table(name = "advertisement")
-public class Advertisement extends  BaseModel<Long>{
-
+public class AddAdvertisementRequest {
     /**
      * 广告名称
      */
-    @Column(name = "name")
     private String name;
 
     /**
      * 广告位置(1.首部轮播，2.专场广告，3.中间轮播)
      */
-    @Column(name = "position")
     private String position;
 
     /**
@@ -29,12 +30,10 @@ public class Advertisement extends  BaseModel<Long>{
     /**
      * 广告链接
      */
-    @Column(name = "url")
     private String url;
 
     /**
      * 广告图片
      */
-    @Column(name = "photo_url")
     private String photoUrl;
 }

@@ -1,31 +1,10 @@
-package com.fred.wimi.wimiproduct.model;
+package com.fred.wimi.wimiproduct.api.model;
 
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "temp")
-public class Temp {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
-    private Long id;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "creation_date")
-    private Date creationDate;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updation_date")
-    private Date updationDate;
-
-    @Column(name = "enabled_flag")
-    private Boolean enabledFlag;
-
-    @Column(name = "gc_flag")
-    private Boolean gcFlag;
+public class Temp extends  BaseModel<Long>{
 
     private String detial;
 
@@ -57,19 +36,7 @@ public class Temp {
         this.createdBy = createdBy;
     }
 
-    /**
-     * @return creation_date
-     */
-    public Date getCreationDate() {
-        return creationDate;
-    }
 
-    /**
-     * @param creationDate
-     */
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
 
     /**
      * @return updated_by
@@ -83,20 +50,6 @@ public class Temp {
      */
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
-    }
-
-    /**
-     * @return updation_date
-     */
-    public Date getUpdationDate() {
-        return updationDate;
-    }
-
-    /**
-     * @param updationDate
-     */
-    public void setUpdationDate(Date updationDate) {
-        this.updationDate = updationDate;
     }
 
     /**

@@ -3,26 +3,41 @@ package com.fred.wimi.wimiproduct.api.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.jmx.snmp.Timestamp;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 
-public class GenericModel<PK> implements Serializable {
+public class BaseModel<PK> implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
     protected PK id;
     protected String createdBy;
     @JsonFormat(
-        pattern = "yyyy-MM-dd HH:mm:ss",
-        timezone = "GMT+8"
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
     )
     protected Timestamp creationDate;
     protected String updatedBy;
     @JsonFormat(
-        pattern = "yyyy-MM-dd HH:mm:ss",
-        timezone = "GMT+8"
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
     )
     protected Timestamp updationDate;
-    protected Long enabledFlag = 1L;
+    protected Boolean enabledFlag = true;
+    protected Boolean gcFlag = false;
 
-    public GenericModel() {
+    public void setEnabledFlag(Boolean enabledFlag) {
+        this.enabledFlag = enabledFlag;
+    }
+
+    public Boolean getGcFlag() {
+        return gcFlag;
+    }
+
+    public void setGcFlag(Boolean gcFlag) {
+        this.gcFlag = gcFlag;
+    }
+
+    public BaseModel() {
     }
 
     public PK getId() {
@@ -65,14 +80,6 @@ public class GenericModel<PK> implements Serializable {
         this.updationDate = updationDate;
     }
 
-    public Long getEnabledFlag() {
-        return this.enabledFlag;
-    }
-
-    public void setEnabledFlag(Long enabledFlag) {
-        this.enabledFlag = enabledFlag;
-    }
-
     public String toString() {
         StringBuffer buffer = new StringBuffer();
         buffer.append(this.getClass().getName()).append("@").append(Integer.toHexString(this.hashCode())).append(" [");
@@ -86,13 +93,13 @@ public class GenericModel<PK> implements Serializable {
             return false;
         } else if (this == o) {
             return true;
-        } else if (!(o instanceof GenericModel)) {
+        } else if (!(o instanceof BaseModel)) {
             return false;
         } else {
-            GenericModel other = (GenericModel)o;
+            BaseModel other = (BaseModel) o;
             if (this.getId() != null && other.getId() != null) {
                 if (this.getId() instanceof Comparable) {
-                    return ((Comparable)this.getId()).compareTo(other.getId()) == 0;
+                    return ((Comparable) this.getId()).compareTo(other.getId()) == 0;
                 } else {
                     return false;
                 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 /**
  * 〈功能概述〉<br>
@@ -24,7 +25,7 @@ public class GlobalExceptionHandler {
         return ErrorHandlerUtil.handlerBizError(request, wimiException);
     }
 
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler({RuntimeException.class})
     public  BizResult runtimeExceptionHandler(HttpServletRequest request, WimiException wimiException){
         return  ErrorHandlerUtil.handlerRuntimeError(request,wimiException);
     }

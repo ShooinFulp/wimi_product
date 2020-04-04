@@ -17,7 +17,7 @@
     <groupId>com.fred.wimi</groupId>
     <artifactId>wimi_product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>fred_wimi_product</name>
+    <name>wimi_product</name>
     <description>fred wimi project product center</description>
 
     <properties>
@@ -40,6 +40,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -57,10 +64,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.fred.wimi.wimiproduct.WimiProductApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 
     <profiles>
         <profile>

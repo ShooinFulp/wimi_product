@@ -1,29 +1,11 @@
-package com.fred.wimi.wimiproduct.model;
+package com.fred.wimi.wimiproduct.api.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "product")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT LAST_INSERT_ID()")
-    private Long id;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "creation_date")
-    private Date creationDate;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updation_date")
-    private Date updationDate;
-
-    @Column(name = "gc_flag")
-    private Boolean gcFlag;
+public class Product extends  BaseModel<Long> {
 
     private String title;
 
@@ -61,20 +43,6 @@ public class Product {
     }
 
     /**
-     * @return creation_date
-     */
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    /**
-     * @param creationDate
-     */
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    /**
      * @return updated_by
      */
     public String getUpdatedBy() {
@@ -86,20 +54,6 @@ public class Product {
      */
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
-    }
-
-    /**
-     * @return updation_date
-     */
-    public Date getUpdationDate() {
-        return updationDate;
-    }
-
-    /**
-     * @param updationDate
-     */
-    public void setUpdationDate(Date updationDate) {
-        this.updationDate = updationDate;
     }
 
     /**
