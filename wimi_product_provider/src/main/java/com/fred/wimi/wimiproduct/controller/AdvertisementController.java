@@ -1,8 +1,8 @@
 package com.fred.wimi.wimiproduct.controller;
 
-import com.fred.wimi.wimiproduct.api.constant.WimiConstant;
 import com.fred.wimi.wimiproduct.api.model.Advertisement;
-import com.fred.wimi.wimiproduct.api.request.AddAdvertisementRequest;
+import com.fred.wimi.wimiproduct.api.request.advertisement.AddAdvertisementRequest;
+import com.fred.wimi.wimiproduct.api.request.advertisement.UpdateAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.response.BizResult;
 import com.fred.wimi.wimiproduct.service.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import java.util.List;
  * @author: fuliping
  * @date: 2020/4/4 2:20 上午
  */
+@CrossOrigin
 @RestController()
 @RequestMapping("advertisement")
 public class AdvertisementController {
@@ -36,6 +37,15 @@ public class AdvertisementController {
     @PostMapping
     public BizResult<String> addAdvertisement(@RequestBody AddAdvertisementRequest request){
         return  advertisementService.addAdvertisement(request);
+    }
 
+    @DeleteMapping("/{id}")
+    public  BizResult<String> removeAdvertisement(@PathVariable("id") Long id){
+        return advertisementService.removeAdvertisement(id);
+    }
+
+    @PutMapping
+    public  BizResult<String> updateAdvertisement(@RequestBody UpdateAdvertisementRequest request){
+        return advertisementService.updateAdvertisement(request);
     }
 }

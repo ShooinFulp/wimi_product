@@ -20,12 +20,12 @@ import java.sql.SQLException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(WimiException.class)
+        @ExceptionHandler(WimiException.class)
     public BizResult wimiExceptionHandler(HttpServletRequest request, WimiException wimiException) {
         return ErrorHandlerUtil.handlerBizError(request, wimiException);
     }
 
-    @ExceptionHandler({RuntimeException.class})
+    @ExceptionHandler({Exception.class})
     public  BizResult runtimeExceptionHandler(HttpServletRequest request, WimiException wimiException){
         return  ErrorHandlerUtil.handlerRuntimeError(request,wimiException);
     }

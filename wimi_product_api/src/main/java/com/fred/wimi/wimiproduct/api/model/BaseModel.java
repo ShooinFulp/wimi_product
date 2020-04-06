@@ -23,6 +23,11 @@ public class BaseModel<PK> implements Serializable {
     )
     protected Timestamp updationDate;
     protected Boolean enabledFlag = true;
+
+    public Boolean getEnabledFlag() {
+        return enabledFlag;
+    }
+
     protected Boolean gcFlag = false;
 
     public void setEnabledFlag(Boolean enabledFlag) {

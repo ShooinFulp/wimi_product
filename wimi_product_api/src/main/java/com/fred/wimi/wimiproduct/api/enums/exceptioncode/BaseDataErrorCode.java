@@ -9,7 +9,13 @@ package com.fred.wimi.wimiproduct.api.enums.exceptioncode;
  * @date: 2020/4/3 16:19
  */
 public enum BaseDataErrorCode implements AppCode {
-    Data_ARG_ERROR(10001, "参数错误,%s");
+    Data_ARG_ERROR(10001, "参数错误,%s"),
+    INSERT_EXCEPTION(10002,"新增失败！"),
+    UPDATE_EXCEPTION(10003,"更新失败！"),
+    DELETE_EXCEPTION(10004,"删除失败！"),
+    GC_EXCEPTION(10005,"GC失败！"),
+    SELECT_EXCEPTION(10006,"查询失败")
+    ;
 
     private int code;
     private String message;
