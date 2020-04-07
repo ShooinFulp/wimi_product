@@ -18,4 +18,13 @@
     <result column="advertisement_url" jdbcType="LONGVARCHAR" property="advertisementUrl" />
     <result column="advertisement_photo_url" jdbcType="LONGVARCHAR" property="advertisementPhotoUrl" />
   </resultMap>
+
+  <sql id="BaseTable">
+    advertisement
+  </sql>
+
+  <select id="search" resultMap="com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse">
+    select *
+    from <include refid="BaseTable"></include>
+  </select>
 </mapper>

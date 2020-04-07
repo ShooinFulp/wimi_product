@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ObjectUtils;
 import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.entity.Example;
 
 import javax.xml.crypto.Data;
 import java.util.Date;
@@ -56,14 +57,22 @@ public abstract class BaseService<T> {
      * 分页查询
      *
      * @param request request参数
-     * @param <I>     入参泛型
+     * @param <I>     入参BO泛型
      * @param <O>     返回泛型
+     * @param <V>     入参VO泛型
      * @return 分页结果
      */
-    public <I, O> Pagination<O> selectByPage(I request) {
-        GenericBO bo = (GenericBO) request;
-        Pagination<O> pagination = Pagination.getInstance4BO(bo);
-        new GenericServiceUtil<O, I>().search(pagination, request, mapper.select );
+    protected  <I, O, V> Pagination<O> selectByPage(I request, GenericServiceUtil.Function<O, V> function) {
+        try {
+            GenericBO bo = (GenericBO) request;
+            Pagination<O> pagination = Pagination.getInstance4BO(bo);
+            new GenericServiceUtil<O, V>().search(pagination, (V) bo.getVo(), function);
+            return pagination;
+        } catch (Exception e) {
+            logger.error(BaseDataErrorCode.SELECT_PAGINATION_EXCEPTION.getMessage(), e);
+            throw WimiException.create(BaseDataErrorCode.SELECT_PAGINATION_EXCEPTION);
+        }
+
     }
 
     public int insert(T entity) {

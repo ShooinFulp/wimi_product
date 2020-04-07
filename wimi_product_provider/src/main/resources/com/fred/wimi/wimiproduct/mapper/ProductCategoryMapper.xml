@@ -20,4 +20,6 @@
     <result column="levels" jdbcType="INTEGER" property="levels" />
     <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
   </resultMap>
+
+
 </mapper>
