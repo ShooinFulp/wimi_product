@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.SQLException;
 
 /**
- * 〈功能概述〉<br>
+ * 〈全局异常处理〉<br>
  *
  * @className: GlobalExceptionHandler
  * @package: com.fred.wimi.wimiproduct.config

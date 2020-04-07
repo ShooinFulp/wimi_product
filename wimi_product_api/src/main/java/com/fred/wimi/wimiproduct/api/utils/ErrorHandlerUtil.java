@@ -1,6 +1,5 @@
 package com.fred.wimi.wimiproduct.api.utils;
 
-import com.fred.wimi.wimiproduct.api.enums.exceptioncode.AppCode;
 import com.fred.wimi.wimiproduct.api.exception.WimiException;
 import com.fred.wimi.wimiproduct.api.response.BizResult;
 import org.slf4j.Logger;

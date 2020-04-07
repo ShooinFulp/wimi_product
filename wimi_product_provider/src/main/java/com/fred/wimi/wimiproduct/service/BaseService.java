@@ -2,7 +2,10 @@ package com.fred.wimi.wimiproduct.service;
 
 import com.fred.wimi.wimiproduct.api.enums.exceptioncode.BaseDataErrorCode;
 import com.fred.wimi.wimiproduct.api.exception.WimiException;
+import com.fred.wimi.wimiproduct.api.framework.model.GenericBO;
+import com.fred.wimi.wimiproduct.api.framework.model.Pagination;
 import com.fred.wimi.wimiproduct.api.model.BaseModel;
+import com.fred.wimi.wimiproduct.api.utils.GenericServiceUtil;
 import com.fred.wimi.wimiproduct.api.utils.SnowFlakeUtil;
 import com.sun.jmx.snmp.Timestamp;
 import org.slf4j.Logger;
@@ -47,7 +50,20 @@ public abstract class BaseService<T> {
             logger.error(BaseDataErrorCode.SELECT_EXCEPTION.getMessage(), e);
             return null;
         }
+    }
 
+    /**
+     * 分页查询
+     *
+     * @param request request参数
+     * @param <I>     入参泛型
+     * @param <O>     返回泛型
+     * @return 分页结果
+     */
+    public <I, O> Pagination<O> selectByPage(I request) {
+        GenericBO bo = (GenericBO) request;
+        Pagination<O> pagination = Pagination.getInstance4BO(bo);
+        new GenericServiceUtil<O, I>().search(pagination, request, mapper.select );
     }
 
     public int insert(T entity) {

@@ -14,8 +14,8 @@ public enum BaseDataErrorCode implements AppCode {
     UPDATE_EXCEPTION(10003,"更新失败！"),
     DELETE_EXCEPTION(10004,"删除失败！"),
     GC_EXCEPTION(10005,"GC失败！"),
-    SELECT_EXCEPTION(10006,"查询失败")
-    ;
+    SELECT_EXCEPTION(10006,"查询失败"),
+    SELECT_PAGINATION_EXCEPTION(10007, "分页查询失败！");
 
     private int code;
     private String message;

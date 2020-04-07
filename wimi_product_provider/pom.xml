@@ -51,7 +51,12 @@
             <artifactId>mapper</artifactId>
             <version>4.1.5</version>
         </dependency>
-
+        <!--使得bootstrap.yml生效-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>

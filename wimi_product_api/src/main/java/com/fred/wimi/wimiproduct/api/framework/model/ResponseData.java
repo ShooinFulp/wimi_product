@@ -1,9 +1,9 @@
-package com.fred.wimi.wimiproduct.api.response;
+package com.fred.wimi.wimiproduct.api.framework.model;
 
 import com.fred.wimi.wimiproduct.api.enums.exceptioncode.AppCode;
 
 /**
- * 〈功能概述〉<br>
+ * 〈返回实体〉<br>
  *
  * @className: ResponseData
  * @package: com.fred.wimi.wimiproduct.api.response

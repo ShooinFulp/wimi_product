@@ -1,11 +1,12 @@
 package com.fred.wimi.wimiproduct.api.response;
 
 import com.fred.wimi.wimiproduct.api.enums.exceptioncode.AppCode;
+import com.fred.wimi.wimiproduct.api.framework.model.ResponseData;
 
 import java.io.Serializable;
 
 /**
- * 〈功能概述〉<br>
+ * 〈业务返回实体〉<br>
  *
  * @className: BizResult
  * @package: com.fred.wimi.wimiproduct.api.response
