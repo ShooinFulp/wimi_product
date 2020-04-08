@@ -1,10 +1,11 @@
 package com.fred.wimi.wimiproduct.api.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.sun.jmx.snmp.Timestamp;
+
 
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class BaseModel<PK> implements Serializable {
     private static final long serialVersionUID = 1L;

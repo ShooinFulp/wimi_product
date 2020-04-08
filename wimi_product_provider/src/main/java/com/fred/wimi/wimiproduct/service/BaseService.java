@@ -2,19 +2,17 @@ package com.fred.wimi.wimiproduct.service;
 
 import com.fred.wimi.wimiproduct.api.enums.exceptioncode.BaseDataErrorCode;
 import com.fred.wimi.wimiproduct.api.exception.WimiException;
-import com.fred.wimi.wimiproduct.api.framework.model.GenericBO;
+import com.fred.wimi.wimiproduct.api.framework.model.GenericBo;
 import com.fred.wimi.wimiproduct.api.framework.model.Pagination;
 import com.fred.wimi.wimiproduct.api.model.BaseModel;
 import com.fred.wimi.wimiproduct.api.utils.GenericServiceUtil;
 import com.fred.wimi.wimiproduct.api.utils.SnowFlakeUtil;
-import com.sun.jmx.snmp.Timestamp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ObjectUtils;
 import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.entity.Example;
 
-import javax.xml.crypto.Data;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -64,7 +62,7 @@ public abstract class BaseService<T> {
      */
     protected  <I, O, V> Pagination<O> selectByPage(I request, GenericServiceUtil.Function<O, V> function) {
         try {
-            GenericBO bo = (GenericBO) request;
+            GenericBo bo = (GenericBo) request;
             Pagination<O> pagination = Pagination.getInstance4BO(bo);
             new GenericServiceUtil<O, V>().search(pagination, (V) bo.getVo(), function);
             return pagination;
@@ -116,7 +114,7 @@ public abstract class BaseService<T> {
                 System.out.println(entity == baseModel);
 
                 baseModel.setGcFlag(true);
-                baseModel.setUpdationDate(new Timestamp(new Date().getTime()));
+                baseModel.setUpdationDate(new Timestamp(System.currentTimeMillis()));
 
                 result = this.mapper.updateByPrimaryKeySelective(entity);
             }
@@ -133,9 +131,9 @@ public abstract class BaseService<T> {
             BaseModel baseModel = (BaseModel) entity;
             if (isNew) {
                 baseModel.setId(SnowFlakeUtil.nextId());
-                baseModel.setCreationDate(new Timestamp(new Date().getTime()));
+                baseModel.setCreationDate(new Timestamp(System.currentTimeMillis()));
             }
-            baseModel.setUpdationDate(new Timestamp(new Date().getTime()));
+            baseModel.setUpdationDate(new Timestamp(System.currentTimeMillis()));
             if (ObjectUtils.isEmpty(baseModel.getGcFlag())) {
                 baseModel.setGcFlag(false);
             }

@@ -12,18 +12,18 @@
     <result column="updation_date" jdbcType="TIMESTAMP" property="updationDate" />
     <result column="gc_flag" jdbcType="BIT" property="gcFlag" />
     <result column="enabled_flag" jdbcType="BIT" property="enabledFlag" />
-    <result column="advertisement_name" jdbcType="VARCHAR" property="advertisementName" />
-    <result column="advertisement_position" jdbcType="VARCHAR" property="advertisementPosition" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
-    <result column="advertisement_url" jdbcType="LONGVARCHAR" property="advertisementUrl" />
-    <result column="advertisement_photo_url" jdbcType="LONGVARCHAR" property="advertisementPhotoUrl" />
+    <result column="url" jdbcType="LONGVARCHAR" property="url" />
+    <result column="photo_url" jdbcType="LONGVARCHAR" property="photoUrl" />
   </resultMap>
 
   <sql id="BaseTable">
     advertisement
   </sql>
 
-  <select id="search" resultMap="com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse">
+  <select id="search" resultType="com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse">
     select *
     from <include refid="BaseTable"></include>
   </select>

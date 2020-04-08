@@ -2,7 +2,7 @@ package com.fred.wimi.wimiproduct.controller;
 
 import com.fred.wimi.wimiproduct.api.framework.model.Pagination;
 import com.fred.wimi.wimiproduct.api.model.Advertisement;
-import com.fred.wimi.wimiproduct.api.request.GenericBo;
+import com.fred.wimi.wimiproduct.api.framework.model.GenericBo;
 import com.fred.wimi.wimiproduct.api.request.advertisement.AddAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.request.advertisement.SearchAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.request.advertisement.UpdateAdvertisementRequest;
@@ -11,8 +11,6 @@ import com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementR
 import com.fred.wimi.wimiproduct.service.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * 〈广告〉
@@ -28,10 +26,10 @@ public class AdvertisementController {
     @Autowired
     private AdvertisementService advertisementService;
 
-    @GetMapping
-    public BizResult<List<Advertisement>> getAllAdvertisement() {
-        return BizResult.success(advertisementService.selectAll());
-    }
+//    @GetMapping
+//    public BizResult<List<Advertisement>> getAllAdvertisement() {
+//        return BizResult.success(advertisementService.selectAll());
+//    }
 
     @GetMapping
     public Pagination<SearchAdvertisementResponse> getAllAdvertisement(@RequestBody GenericBo<SearchAdvertisementRequest> genericBo) {

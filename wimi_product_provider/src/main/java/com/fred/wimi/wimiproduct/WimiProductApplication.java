@@ -12,7 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author: admin
  * @date: 2020/4/3 14:19
  */
-@MapperScan("com")
+@MapperScan("com.fred.wimi.wimiproduct.mapper")
 @SpringBootApplication
 public class WimiProductApplication {
 

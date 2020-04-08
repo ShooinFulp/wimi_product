@@ -1,4 +1,4 @@
-package com.fred.wimi.wimiproduct.api.request;
+package com.fred.wimi.wimiproduct.api.framework.model;
 
 import lombok.Data;
 

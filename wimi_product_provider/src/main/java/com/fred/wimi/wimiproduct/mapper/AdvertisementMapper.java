@@ -1,7 +1,6 @@
 package com.fred.wimi.wimiproduct.mapper;
 
 import com.fred.wimi.wimiproduct.api.model.Advertisement;
-import com.fred.wimi.wimiproduct.api.request.GenericBo;
 import com.fred.wimi.wimiproduct.api.request.advertisement.SearchAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse;
 import org.apache.ibatis.annotations.Param;

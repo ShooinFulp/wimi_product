@@ -2,12 +2,13 @@ package com.fred.wimi.wimiproduct.api.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Data
 @Table(name = "advertisement")
-public class Advertisement extends  BaseModel<Long>{
+public class Advertisement extends  BaseModel<Long> {
 
     /**
      * 广告名称

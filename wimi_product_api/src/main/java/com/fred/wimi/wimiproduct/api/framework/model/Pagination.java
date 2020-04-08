@@ -11,7 +11,7 @@ public class Pagination<T> extends PageSize {
     @JsonIgnore
     private boolean count;
     @JsonIgnore
-    private GenericBO criteria;
+    private GenericBo criteria;
 
     public Pagination() {
         this(1, DEFAULT_PAGESIZE, true);
@@ -35,13 +35,13 @@ public class Pagination<T> extends PageSize {
         return new Pagination(0, top, false);
     }
 
-    public static Pagination getInstance4BO(GenericBO genericBO) {
+    public static Pagination getInstance4BO(GenericBo genericBO) {
         Pagination pagination = new Pagination(genericBO.getPage(), genericBO.getPageSize(), true);
         pagination.setCriteria(genericBO);
         return pagination;
     }
 
-    public static Pagination getInstance2Top4BO(GenericBO genericBO) {
+    public static Pagination getInstance2Top4BO(GenericBo genericBO) {
         Pagination pagination = new Pagination(0, genericBO.getPageSize(), false);
         pagination.setCriteria(genericBO);
         return pagination;
@@ -75,11 +75,11 @@ public class Pagination<T> extends PageSize {
         return this.count;
     }
 
-    public GenericBO getCriteria() {
+    public GenericBo getCriteria() {
         return this.criteria;
     }
 
-    public void setCriteria(GenericBO criteria) {
+    public void setCriteria(GenericBo criteria) {
         this.criteria = criteria;
     }
 }
