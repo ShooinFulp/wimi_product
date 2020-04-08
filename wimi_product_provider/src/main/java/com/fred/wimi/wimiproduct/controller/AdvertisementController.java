@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
  * @author: fuliping
  * @date: 2020/4/4 2:20 上午
  */
-@CrossOrigin
 @RestController()
 @RequestMapping("advertisement")
 public class AdvertisementController {
@@ -31,9 +30,9 @@ public class AdvertisementController {
 //        return BizResult.success(advertisementService.selectAll());
 //    }
 
-    @GetMapping
-    public Pagination<SearchAdvertisementResponse> getAllAdvertisement(@RequestBody GenericBo<SearchAdvertisementRequest> genericBo) {
-        return advertisementService.selectByPage(genericBo);
+    @PostMapping("search")
+    public Pagination<SearchAdvertisementResponse> searchAdvertisement(@RequestBody GenericBo<SearchAdvertisementRequest> genericBo) {
+        return advertisementService.selectByBo(genericBo);
     }
 
     @GetMapping("/{id}")
@@ -46,8 +45,8 @@ public class AdvertisementController {
         return advertisementService.addAdvertisement(request);
     }
 
-    @DeleteMapping("/{id}")
-    public BizResult<String> removeAdvertisement(@PathVariable("id") Long id) {
+    @DeleteMapping
+    public BizResult<String> removeAdvertisement(@RequestParam("id") Long id) {
         return advertisementService.removeAdvertisement(id);
     }
 

@@ -26,5 +26,6 @@
   <select id="search" resultType="com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse">
     select *
     from <include refid="BaseTable"></include>
+    where gc_flag = 0
   </select>
 </mapper>

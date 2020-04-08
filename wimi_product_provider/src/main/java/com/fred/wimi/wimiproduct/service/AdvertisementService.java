@@ -57,7 +57,7 @@ public class AdvertisementService extends BaseService<Advertisement> {
         return BizResult.success(WimiConstant.SUCCESS);
     }
 
-    public Pagination<SearchAdvertisementResponse> selectByPage(GenericBo<SearchAdvertisementRequest> bo) {
+    public Pagination<SearchAdvertisementResponse> selectByBo(GenericBo<SearchAdvertisementRequest> bo) {
         return selectByPage(bo, advertisementMapper::search);
     }
 }
