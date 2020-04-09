@@ -27,7 +27,7 @@
     select *
     from <include refid="BaseTable"></include>
     where gc_flag = 0
-    <if test="param.name != null and param.name != ''">
+    <if test="param != null and param.name != null and param.name != ''">
       and name like concat('%',#{param.name},'%')
     </if>
   </select>
