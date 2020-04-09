@@ -4,6 +4,7 @@ import com.fred.wimi.wimiproduct.api.model.Advertisement;
 import com.fred.wimi.wimiproduct.api.request.advertisement.SearchAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
