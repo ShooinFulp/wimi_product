@@ -1,7 +1,6 @@
-package com.fred.wimi.wimiproduct.api.response;
+package com.fred.wimi.wimiproduct.api.framework.model;
 
 import com.fred.wimi.wimiproduct.api.enums.exceptioncode.AppCode;
-import com.fred.wimi.wimiproduct.api.framework.model.ResponseData;
 
 import java.io.Serializable;
 

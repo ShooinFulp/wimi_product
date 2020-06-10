@@ -1,7 +1,7 @@
 package com.fred.wimi.wimiproduct.api.utils;
 
 import com.fred.wimi.wimiproduct.api.exception.WimiException;
-import com.fred.wimi.wimiproduct.api.response.BizResult;
+import com.fred.wimi.wimiproduct.api.framework.model.BizResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

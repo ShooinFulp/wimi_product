@@ -1,7 +1,7 @@
 package com.fred.wimi.wimiproduct.config;
 
 import com.fred.wimi.wimiproduct.api.exception.WimiException;
-import com.fred.wimi.wimiproduct.api.response.BizResult;
+import com.fred.wimi.wimiproduct.api.framework.model.BizResult;
 import com.fred.wimi.wimiproduct.api.utils.ErrorHandlerUtil;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

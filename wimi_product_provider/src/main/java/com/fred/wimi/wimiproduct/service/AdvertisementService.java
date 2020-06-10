@@ -9,7 +9,7 @@ import com.fred.wimi.wimiproduct.api.framework.model.GenericBo;
 import com.fred.wimi.wimiproduct.api.request.advertisement.AddAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.request.advertisement.SearchAdvertisementRequest;
 import com.fred.wimi.wimiproduct.api.request.advertisement.UpdateAdvertisementRequest;
-import com.fred.wimi.wimiproduct.api.response.BizResult;
+import com.fred.wimi.wimiproduct.api.framework.model.BizResult;
 import com.fred.wimi.wimiproduct.api.response.advertisement.SearchAdvertisementResponse;
 import com.fred.wimi.wimiproduct.converter.AdvertisementConverter;
 import com.fred.wimi.wimiproduct.mapper.AdvertisementMapper;
