@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 /**
- * 〈功能概述〉
+ * 〈广告〉
  *
  * @author: fuliping
  * @date: 2020/4/4 2:21 上午

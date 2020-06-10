@@ -1,7 +1,11 @@
 package com.fred.wimi.wimiproduct.controller;
 
+import com.fred.wimi.wimiproduct.api.request.productcategory.AddProductCategory;
+import com.fred.wimi.wimiproduct.api.response.BizResult;
 import com.fred.wimi.wimiproduct.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,4 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductCategoryController {
     @Autowired
     private ProductCategoryService productCategoryService;
+
+    @PostMapping
+    public BizResult<String> addProductCategory(@RequestBody AddProductCategory addProductCategory) {
+        return productCategoryService.addProductCategory(addProductCategory);
+    }
 }

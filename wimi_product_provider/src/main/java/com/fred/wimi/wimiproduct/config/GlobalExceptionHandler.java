@@ -19,14 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-        @ExceptionHandler(WimiException.class)
+    @ExceptionHandler(WimiException.class)
     public BizResult wimiExceptionHandler(HttpServletRequest request, WimiException wimiException) {
         return ErrorHandlerUtil.handlerBizError(request, wimiException);
     }
 
     @ExceptionHandler({Exception.class})
-    public  BizResult runtimeExceptionHandler(HttpServletRequest request, WimiException wimiException){
-        return  ErrorHandlerUtil.handlerRuntimeError(request,wimiException);
+    public BizResult runtimeExceptionHandler(HttpServletRequest request, WimiException wimiException) {
+        return ErrorHandlerUtil.handlerRuntimeError(request, wimiException);
     }
 
 }
