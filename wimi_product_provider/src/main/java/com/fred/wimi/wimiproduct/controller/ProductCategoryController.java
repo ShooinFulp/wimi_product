@@ -1,7 +1,7 @@
 package com.fred.wimi.wimiproduct.controller;
 
+import com.fred.wimi.wimiproduct.api.framework.model.BizResult;
 import com.fred.wimi.wimiproduct.api.request.productcategory.AddProductCategory;
-import com.fred.wimi.wimiproduct.api.response.BizResult;
 import com.fred.wimi.wimiproduct.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
