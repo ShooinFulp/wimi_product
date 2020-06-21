@@ -59,6 +59,6 @@ public class ProductCategoryService extends BaseService<ProductCategory> {
 
         this.update(productCategory);
 
-        return null;
+        return BizResult.success(WimiConstant.SUCCESS);
     }
 }
