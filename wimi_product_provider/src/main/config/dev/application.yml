@@ -1,16 +1,16 @@
 spring:
   datasource:
     username: root
-    password: 123
-    #password: a123456
-    #url: jdbc:mysql://192.168.109.128/wimi_product?characterEncoding=utf-8
-    url: jdbc:mysql://127.0.0.1/wimi_product?characterEncoding=utf-8
+    #password: 123
+    password: a123456
+    url: jdbc:mysql://192.168.109.128/wimi_product?characterEncoding=utf-8
+    #url: jdbc:mysql://127.0.0.1/wimi_product?characterEncoding=utf-8
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath*:com/fred/wimi/wimiproduct/mapper/*.xml
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: true #开启驼峰模式
 logging:
   level:
     com.fred.wimi.wimiproduct.mapper: debug
